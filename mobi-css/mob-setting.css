@@ -1,0 +1,10 @@
+@media screen and (max-width: 900px) {
+    
+    .setting-item input[type="range"] {
+        width: 50%;
+    }
+    .setting-item input[type="text"] {
+        width: 50%;
+    }
+
+}

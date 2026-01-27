@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动歌词</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #ffffff;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .lyrics-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        max-width: 600px;
+        height: 200px;
+        overflow: hidden;
+        border: 1px solid #333;
+        border-radius: 10px;
+        background-color: #1e1e1e;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .lyrics {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: transform;
+    }
+
+    .lyrics-line {
+        font-size: 18px;
+        line-height: 2em;
+        opacity: 0.6;
+        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: scale(0.9);
+    }
+
+    .lyrics-line.active {
+        font-size: 24px;
+        font-weight: bold;
+        opacity: 1;
+        color: #00bcd4;
+        transform: scale(1);
+    }
+</style>
+
+<body>
+    <div class="lyrics-container">
+        <div class="lyrics" id="lyrics">
+            <!-- 歌词将被动态插入 -->
+        </div>
+    </div>
+
+    <script>
+        // 动态歌词加载和滚动实现
+        async function loadLyrics(songId) {
+            const lyricsContainer = document.getElementById('lyrics');
+            const lyrics = await getLyricsHelper(songId);
+
+            // 清空现有歌词
+            lyricsContainer.innerHTML = '';
+
+            // 插入歌词
+            lyrics.forEach((line, index) => {
+                const lineElement = document.createElement('div');
+                lineElement.classList.add('lyrics-line');
+                lineElement.textContent = line.value;
+                lineElement.dataset.start = line.start;
+                lyricsContainer.appendChild(lineElement);
+            });
+
+            // 计算并设置歌词容器的初始 translateY 偏移量
+            const firstLine = lyricsContainer.querySelector('.lyrics-line');
+            if (firstLine) {
+                firstLine.classList.add('active');
+                const containerHeight = lyricsContainer.offsetHeight;
+                const firstLineHeight = firstLine.offsetHeight;
+
+                // 通过正数偏移来确保第一个歌词居中显示
+                const initialOffset = (firstLine.offsetTop - containerHeight / 2) + firstLineHeight / 2;
+                lyricsContainer.style.transform = `translateY(${initialOffset}px)`;
+            }
+        }
+
+        function scrollLyrics(currentTime) {
+            const lyricsContainer = document.getElementById('lyrics');
+            const lines = lyricsContainer.querySelectorAll('.lyrics-line');
+
+            let activeLineIndex = -1;
+
+            // 查找当前时间对应的歌词行
+            lines.forEach((line, index) => {
+                const startTime = parseFloat(line.dataset.start);
+                const nextLine = lines[index + 1];
+                const endTime = nextLine ? parseFloat(nextLine.dataset.start) : Infinity;
+
+                if (currentTime >= startTime && currentTime < endTime) {
+                    activeLineIndex = index;
+                }
+
+                line.classList.remove('active');
+            });
+
+            if (activeLineIndex !== -1) {
+                lines[activeLineIndex].classList.add('active');
+                const activeLine = lines[activeLineIndex];
+                const containerHeight = lyricsContainer.offsetHeight;
+                const lineOffset = activeLine.offsetTop;
+                const lineHeight = activeLine.offsetHeight;
+
+                let translateY = (lineOffset - containerHeight / 2) + lineHeight / 2;
+                translateY = -translateY
+
+                // 保证滚动时歌词垂直居中
+                lyricsContainer.style.transform = `translateY(${translateY}px)`;
+            }
+        }
+
+        async function getLyricsHelper(songId) {
+            // 模拟 API 返回数据
+            return [
+                { start: 0, value: "歌词 1" },
+                { start: 1, value: "歌词 2" },
+                { start: 2, value: "歌词 3" },
+                { start: 3, value: "歌词 4" },
+                { start: 4, value: "歌词 5" },
+                { start: 5, value: "歌词 6" },
+                { start: 6, value: "歌词 7" },
+                { start: 7, value: "歌词 8" },
+                { start: 8, value: "歌词 9" },
+                { start: 9, value: "歌词 10" },
+                { start: 10, value: "歌词 11" },
+                { start: 11, value: "歌词 12" },
+                { start: 12, value: "歌词 13" },
+            ];
+        }
+
+        // 示例: 加载并滚动歌词
+        (async function () {
+            const songId = 'example-song-id';
+            await loadLyrics(songId);
+
+            // 模拟音频播放时间 (以秒为单位)
+            let currentTime = 0;
+            setInterval(() => {
+                scrollLyrics(currentTime);
+                currentTime += 1;
+            }, 1000);
+        })();
+    </script>
+</body>

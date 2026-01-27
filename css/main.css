@@ -1,0 +1,277 @@
+/* 全局样式 */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    /* 添加淡入淡出动画 */
+}
+
+/* App 容器 */
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* 防止溢出滚动条 */
+    align-items: center;
+    position: relative;
+}
+
+/* 内页部分 */
+.innerPage {
+    flex: 1;
+    /* 让 iframe 部分占据剩余高度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* iframe 样式 */
+.innerPage iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 1;
+    /* 初始完全可见 */
+    transition: opacity 0.4s ease;
+    /* 仅为 opacity 添加过渡 */
+    position: absolute;
+    top: 81.2px;
+    left: 0;
+
+}
+
+.innerPage iframe.hidden {
+    opacity: 0;
+    /* 隐藏时透明 */
+    pointer-events: none;
+    /* 避免隐藏状态下可点击 */
+}
+
+.subIframeApp>.subIframeApp_controlTab {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    background-color: var(--main-head-col);
+    padding-left: 20px;
+}
+
+.subIframeApp_controlTab>span {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.subIframeApp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 100%; */
+    flex: 1;
+    border: none;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(to bottom, #f8f9fa, #ffe6f2);
+}
+
+
+#subIframe {
+    position: unset;
+}
+
+/* musicPlayer 样式 */
+.musicPlayer {
+    height: 70px;
+    background-color: var(--music-player-bg-col);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: var(--logo-text-col);
+    /* font-size: 1.2em; */
+    /* font-weight: bold; */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+    flex-direction: row;
+    /* gap: 16px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+/* 显示状态 */
+.musicPlayer.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.musicPlayer_info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* max-width: 18vw; */
+    overflow: hidden;
+}
+
+.musicPlayer_info>span {
+    /* display: flex; */
+    /* align-items: center; */
+    white-space: nowrap;
+    /* 禁止换行 */
+    max-width: 18vw;
+    text-overflow: ellipsis;
+    /* 超出部分用省略号代替 */
+    overflow: hidden;
+
+    font-family: "PingFangSC-Semibold-ttf"
+}
+
+
+.musicPlayer_title {
+    text-wrap: nowrap;
+    width: 100%;
+    /* max-width: 18vw; */
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.musicPlayer_controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.musicPlayer_controls>div {
+    /* background-color: #fff; */
+    border: none;
+    color: #ff6699;
+    font-size: 1.3em;
+    /* padding: 5px 6px; */
+    /* border-radius: 4px; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.musicPlayer_big_info {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    gap: 18px;
+}
+
+.musicPlayer_cover_class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 56px;
+    /* width: 56px; */
+    aspect-ratio: 1 / 1;
+    /* 确保是正方形 */
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+
+.musicPlayer_cover {
+    /* height: 80%; */
+    /* position: relative; */
+    /* left: 80px; */
+    /* border-radius: 50%; */
+    /* cursor: pointer; */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    /* 居中显示 */
+
+}
+
+
+.musicPlayer_progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+    font-family: 'Comic Sans MS', sans-serif;
+    margin-top: 10px;
+    color: var(--progress-time-text-col);
+    /* max-width: 30vw; */
+    flex: 0.85;
+    padding-left: 1px;
+    /* 避免数字增加时会有抖动 */
+
+}
+
+.progress_bar {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 400px;
+    height: 8px;
+    background: var(--progress-time-bg-col);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0 10px;
+    cursor: pointer;
+    /* 鼠标变为手型 */
+}
+
+.progress_bar_fill {
+    width: 0;
+    height: 100.1%;
+    background: var(--progess-time-fill-bg-col);
+    position: absolute;
+    z-index: 3;
+    top: 0;
+}
+
+.progress_bar_flow_loaded {
+    position: absolute;
+    z-index: 1;
+    width: 0;
+    height: 100.1%;
+    background-color: var(--progress-bar-flow-bg-col);
+    top: 0;
+
+}
+
+.progress_bar_fill,
+.progress_bar_flow_loaded {
+    transition: width ease 0.25s;
+}
+
+.progress_time {
+    font-size: 14px;
+    /* font-weight: bold; */
+    font-family: 'Cat-Pen-ttf';
+}
+
+.main-header {
+    width: 100%;
+    box-sizing: border-box;
+}
+

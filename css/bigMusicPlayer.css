@@ -1,0 +1,575 @@
+.bigMusicOverPage {
+    display: flex;
+    position: fixed;
+    top: calc(100vh + 60px + 32px);
+    /* top: 0; */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 16px;
+    box-sizing: border-box;
+    gap: 16px;
+    transition: all 0.6s ease-in-out;
+    background: var(--big-over-page-bg-col);
+    /* backdrop-filter: blur(8px); */
+    z-index: 10;
+}
+
+
+.bmBackGroundCover {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/img/baiLu.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(40px) brightness(50%);  
+    /* 只模糊背景 */
+    z-index: -1;        /* 确保伪元素在内容下方 */
+    margin: -32px
+    /* 确保全部覆盖不留边边 */
+  }
+
+.bigMusicOverPage.show {
+    top: 0;
+}
+
+.bigMusicTopBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 24px;
+}
+.bigMusicTopBar > * {
+    font-size: 1.3em;
+    cursor: pointer;
+    color: var(--big-over-page-title-col);
+}
+
+.bigMusicTopBar > .hideOverPage {
+    position: absolute;
+    top: 0;
+    left: 16px;
+}
+
+.bigMusicTopBar > .hideOverPage:hover {
+    transform: rotate(180deg);
+}
+.bigMusic_controls {
+    position: relative;
+    justify-content: center;
+    gap: 10%;
+}
+
+.bigMusicPlayer_cover_class {
+    height: 55vh;
+    /* width: 105%; */
+    /* 歌词溢出fix */
+    width: 100%;
+    /* 溢出吗 如溢 */
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-end; */
+    justify-content: center;
+    scroll-snap-align: start;   /* Align to start when scrolling */
+    flex-shrink: 0; /* Prevent shrinking */
+    padding: 8px;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
+}
+
+.bigMusicPlayer_cover_up_class {
+    height: 65%;
+    /* width: 65%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+.bigMusicPlayer_cover_up_class > img {
+    /* height: 100%;
+    width: 100%;
+    object-fit: contain; */
+
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持比例填充 */
+    object-position: center; /* 居中显示 */
+
+    /* animation: keep_spin 15s linear infinite; */
+
+}
+
+@keyframes keep_spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 
+.bigMusicPlayer_cover_class > img {
+    
+    object-fit: contain;
+    
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    border-radius: 50%;
+} */
+
+
+.bigMusicProgress  {
+    width: 100%;
+    flex: unset;
+    margin-top: unset;
+}
+
+.bigMusicProgress > .progress_bar {
+    /* width: 100%; */
+    max-width: unset;
+    box-shadow: 0px 0px 15px 4px rgb(67 67 67 / 60%);
+}
+
+.bigMusic_controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* gap: 5px; */
+    justify-content: center;
+    gap: 10vw;
+}
+
+.bigMusic_controls > div {
+    /* background-color: #fff; */
+    border: none;
+    color: #ff6699;
+    font-size: 1.3em;
+    /* padding: 5px 6px; */
+    /* border-radius: 4px; */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.musicInfo {
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
+    padding-right: 16px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    gap: 8px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+
+.musicInfo > * {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    max-width: 70vw;
+}
+.musicInfo > span:first-child {
+    font-size: 1.1em;
+    color: var(--big-over-page-title-col);
+}
+
+.musicInfo > span:last-child {
+    font-size: 1.05em;
+    color: var(--big-over-page-artist-col);
+    max-height: 32px;
+}
+
+.bigMusicPlayer_infos {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: flex-start;
+
+    gap: 15%;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+
+    padding-top: 5%;
+
+}
+
+.bigMusicOverPageScroll {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;  /* Allow horizontal scrolling */
+    width: 100%;
+    scroll-snap-type: x mandatory;  /* Align scroll to the start of each child */
+    scroll-behavior: smooth;
+    height: 55vh;
+}
+
+.bigMusicOverPage_innerScroll {
+    display: flex;
+    flex-direction: row;
+    width: 100%; /* Ensures content doesn't break into multiple rows */
+    height: 100%;
+    align-items: center;
+}
+
+.bigMusic_lyrics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%; /* Ensure the width is enough to display the lyrics */
+    scroll-snap-align: start;   /* Align to start when scrolling */
+    flex-shrink: 0; /* Prevent shrinking */
+    height: 99%;
+}
+
+.lyrics-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* max-width: 600px; */
+    height: 100%;
+    overflow: hidden;
+    /* border: var(--big-over-page-lyrics-container-border); */
+    /* border-radius: 10px; */
+    /* background-color: var(--big-over-page-lyrics-container-bg-col); */
+    /* box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5); */
+
+    box-sizing:border-box;
+    /* padding: 6px; */
+    
+}
+
+.lyrics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    overflow: hidden;
+    width: 100%;
+}
+
+.lyrics-line {
+    /* 基础样式 */
+    font-size: 19px; /* 保持原始大小 */
+    line-height: 1.8; /* 优化行高比例 */
+    opacity: 0.4; /* 非活跃行更低透明度 */
+    color: var(--big-over-page-lyrics-line-font-col);
+    
+    font-family: 'PingFangSC-Regular-ttf';
+
+    /* 动画优化 */
+    transition: 
+        opacity 0.45s cubic-bezier(0.32, 0.08, 0.24, 1),
+        transform 0.45s cubic-bezier(0.32, 0.08, 0.24, 1),
+        background 0.35s ease,
+        font-weight 0.3s ease; /* 新增字重过渡 */
+    
+    /* 缩放效果 */
+    transform: scale(0.92) translateY(2px); /* 微调垂直位置 */
+    transform-origin: center center; /* 保持左对齐缩放 */
+    
+    /* 性能优化 */
+    will-change: transform, opacity;
+    
+    /* 文本渲染优化 */
+    font-weight: 300; 
+    /* 350 更细的字重 */
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    
+    /* 布局优化 */
+    display: inline-block; /* 使背景色仅包裹文本 */
+    padding: 2px 9px; /* 增加水平内边距 */
+    margin: 1px 0; /* 垂直间距 */
+    border-radius: 6px; /* 圆角 */
+    background: transparent;
+
+    box-sizing: border-box;
+    max-width: calc(100% - 32px);
+    
+    opacity: 0;
+}
+
+.lyrics-line.active {
+    /* 激活状态增强 */
+    opacity: 1 !important;
+    color: var(--big-over-page-lyrics-active);
+    font-weight: 700; 
+    /* Apple风格中等字重 600 */
+    font-family: 'PingFangSC-Semibold-ttf';
+
+    /* 缩放优化 */
+    transform: scale(1.03) translateY(0); /* 微放大并重置位置 */
+    
+    /* 背景效果 */
+    background: var(--big-over-page-lyrice-background-cover); /* 更柔和的背景 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* 添加微妙阴影 */
+    
+    /* 动画增强 */
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28); /* 弹性效果 */
+}
+
+.bigMusicProgress_current_time,.bigMusic_progress_all_time {
+    color: var(--big-over-page-title-col);
+}
+
+.bigMusic_queue_ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    position: absolute;
+    bottom: -100vh;
+    /* right: 32px; */
+    background: var(--play-queue-ui-bg-col);
+    width: 88vw;
+    height: 60vh;
+    gap: 10px;
+    padding-top: 4px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: up_to_down_ui_out 0.5s ease forwards;
+    z-index: 11;
+    opacity: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.bigMusic_queue_ui.show {
+    animation: down_to_up_ui_in 0.5s ease forwards;
+}
+
+@keyframes up_to_down_ui_out {
+    0% {
+        bottom: 64px;
+        opacity: 1;
+    }
+    100% {
+        bottom: -100vh;
+        opacity: 0;
+    }
+}
+
+@keyframes down_to_up_ui_in {
+    0% {
+        bottom: -100vh;
+        opacity: 0;
+    }
+    100% {
+        bottom: 64px;
+        opacity: 1;
+    }
+}
+
+.bigMusic_queue_title {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+    position: relative;
+    color: var(--index-p-text-col);
+}
+
+.bigMusic_queue_title > span:first-child{
+ position: absolute;
+ left: 16px;
+
+}
+
+.bigMusic_queue_title > span:last-child{
+    position: absolute;
+    right: 16px;
+}
+
+.bigMusic_queue_list {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 92%;
+    overflow-x: scroll;
+    padding-bottom: 16px;
+    /* 溢出fix */
+}
+
+.queue_item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 10px;
+
+
+
+    background-color: var(--play-queue-item-bg-col);
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* flex: 1; */
+    transition:all 0.3s ease;
+
+    /* opacity: 0; */
+    animation: fadeIn 0.3s ease forwards;
+
+    gap: 12px;
+    width: 95.5%;
+
+}
+
+
+.queue_item.nowPlaying {
+    background-color: var(--play-queue-now-playing-bg-col);
+    animation: colorChange 1s ease-in-out infinite alternate;
+}
+
+@keyframes colorChange {
+    0% {
+        background-color: var(--play-queue-now-playing-bg-col);
+    }
+    50% {
+        background-color: var(--play-queue-now-playing-keyframe-bg2-col);
+    }
+    100% {
+        background-color: var(--play-queue-now-playing-bg-col);
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.queue_item > *{
+    /* font-size: 0.8em !important; */
+    color: var(--play-queue-item-font-col);
+}
+
+.queue_item_info  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    gap: 2px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    max-width: 70vw;
+}
+
+.queue_item_info > span:first-child {
+    color: var(--play-queue-title-col);
+}
+
+.queue_item_info > span:last-child {
+    color: var(--play-queue-artist-col);
+}
+
+.queue_item_cover {
+    width: 70px;
+    /* object-fit: contain; */
+    /* border-radius: 50%; */
+    display: flex;
+}
+
+.queue_item_cover_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 60px; */
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.queue_item_cover_2 > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 500px) {
+    .lyrics-line {
+        font-size: 19.5px;
+    }
+    .lyrics-line.active {
+        font-size: 19.5px;
+    }
+}
+
+
+
+
+@media screen and (min-width: 685px) {
+    .bigMusicOverPageScroll {
+        scroll-snap-type: unset;
+        scroll-behavior: unset;
+    }
+    .bigMusicOverPage_innerScroll {
+        width: 100%;
+    }
+
+    .bigMusicPlayer_cover_class {
+        width: 35%;
+        
+    }
+
+    .bigMusic_lyrics {
+        width: 100%;
+    }
+
+    .bigMusic_lyrics {  
+         width: 65%; 
+     }
+    .bigMusicTopBar > span:nth-child(n+2){
+        display: none;
+    }
+
+}
+
+
+
+
+
+/* @media screen and (min-width: 1600px) {
+    .bigMusicPlayer_cover_class {
+        width: 25%;
+    }
+    .bigMusic_lyrics { 
+        width: 75%;
+    }
+} */
+
+@media screen and (min-height: 1160px) {
+
+    .bigMusicPlayer_cover {
+        height: 60%;
+    }
+
+}
+
+

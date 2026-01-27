@@ -1,0 +1,37 @@
+.content {
+    padding: 0;
+}
+
+.album-infos span:nth-child(1) { 
+    font-size: 24px;
+    color: var(--music-card-artist-col);
+}
+
+.album-title {
+    color: var(--music-card-title-col);
+}
+
+.album-header {
+    gap: 12px;
+}
+
+.musicPlayLists {
+    padding: 16px;
+}
+
+
+.overPage {
+    height: 98%;
+}
+
+.playListName {
+    max-width: 200px;
+}
+
+.musicPlayListsItem {
+    width: 200px;
+}
+
+.artistSubPage {
+    height: 88%;
+}

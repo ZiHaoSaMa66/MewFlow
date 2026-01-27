@@ -1,0 +1,74 @@
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<div class="bigMusicOverPage">
+		<div class="bmBackGroundCover"></div>
+		
+		<div class="bigMusicTopBar">
+			<span class="hideOverPage" onclick="hideBigMusicUi()">🔽</span>
+			<span class="bMc_topBar_title">歌曲</span>
+			<span class="bMc_topBar_lyric">歌词</span>
+		</div>
+
+		<div class="bigMusicOverPageScroll">
+
+			<div class="bigMusicOverPage_innerScroll">
+
+				<div class="bigMusicPlayer_cover_class">
+
+					<div class="bigMusicPlayer_cover_up_class">
+						<img class="bigMusicPlayer_cover" src="./img/def_cover.png" alt="">
+					</div>
+				</div>
+
+				<div class="bigMusic_lyrics">
+					<div class="lyrics-container">
+						<div class="lyrics" id="lyrics">
+							<!-- 歌词将被动态插入 -->
+						</div>
+					</div>
+
+					<canvas id="visualizer" style="position: absolute; top: 0; left: 0;width: 100%; height: 100%; z-index: -1;"></canvas>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="bigMusicPlayer_infos">
+
+			<div class="musicInfo">
+				<span class="musicInfo_title">UnLoaded</span>
+				<span class="musicInfo_artist">Artist</span>
+			</div>
+
+			<div class="bigMusicProgress musicPlayer_progress">
+				<span class="bigMusicProgress_current_time progress_time current_time">0:00</span>
+				<div class="bigMusic_progress_bar progress_bar">
+					<div class="bigMusic_progress_bar_fill progress_bar_fill"></div>
+					<div class="bigMusic_progress_bar_flow_loaded progress_bar_flow_loaded"></div>
+				</div>
+				<span class="bigMusic_progress_all_time progress_time total_time">0:00</span>
+			</div>
+
+
+
+			<div class="bigMusic_controls">
+				<div onclick="switch_play_que_mode()" class="que_mode_btn">🔁</div>
+				<div onclick="prevMusic()">⏮️</div>
+				<div class="audio_plays_btn" onclick="togglePlayMusic()">⏯️</div>
+				<div onclick="nextMusic()">⏭️</div>
+				<div onclick="show_big_music_queue_ui()">#️⃣</div>
+
+
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

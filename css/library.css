@@ -1,0 +1,214 @@
+
+
+/* 主内容区域 */
+.content {
+    flex: 1;
+    padding: 10px;
+}
+
+.searchInputClass {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+/* 搜索框样式 */
+.searchMusic {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 20px; */
+    flex-direction: column;
+    gap: 12px;
+}
+
+.searchMusic input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: var(--search-input-border);
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: var(--music-card-bg-col);
+    color: var(--index-h2-text-col);
+}
+
+.searchMusic input:focus {
+    border-color: var(--main-theme-col);
+}
+
+.searchMusic button {
+    background-color: var(--login-btn-bg-col);
+    color: var(--login-btn-text-col);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.searchMusic button:hover {
+    background-color: var(--login-btn-bg-hover-col);
+}
+
+.sortClass {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    align-self: flex-start;
+    gap: 12px;
+}
+
+#sortOrder,#sortFunc {
+    width: 200px;
+    padding: 10px;
+    border: var(--sort-order-border);
+    border-radius: 10px;
+    background-color: var(--sort-bg-col); /* 浅粉背景 */
+    /* font-family: 'Comic Sans MS', cursive;  */
+    /* 可爱字体 */
+    font-size: 16px;
+    color: var(--sort-text-col); /* 甜美粉色 */
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    /* align-self: flex-start; */
+}
+
+#sortOrder:hover,#sortFunc:hover {
+    background-color: var(--sort-hover-bg-col);
+    border-color: var(--sort-hover-border-col);
+}
+
+#sortOrder:focus,#sortFunc:focus {
+    box-shadow: var(--sort-focus-box-shadow);
+}
+
+
+/* 音乐列表样式 */
+.musicLists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    flex-direction: column;
+    overflow-y: auto;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.musicListItem span{
+    font-family: "PingFangSC-Semibold-ttf";
+}
+
+.musicListItem {
+    display: flex;
+    align-items: center;
+    background-color: var(--music-list-item-bg-col);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition:all 0.3s ease;
+
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+
+    gap: 7px;
+    width: 95.5%;
+}
+
+
+.musicListItem > span:first-child {
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    color: var(--music-list-item-no-col);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.musicListItem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.musicListItem img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.musicInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.musicInfo .musics_title {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--music-list-item-title-col);
+}
+
+.musics_artist,.musics_album {
+    cursor: pointer;
+    color: var(--music-list-item-artist-col);
+}
+
+.musicInfo span:last-child {
+    font-size: 0.9em;
+    color: #666;
+    margin-right: 5px;
+}
+
+.musicListItem span:last-child {
+    font-size: 0.9em;
+    color: var(--music-list-item-album-col);
+}
+
+.zhezhao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #f8f9fa, #ffe6f2);
+}
+
+.zhezhao > img {
+    width: 100px;
+    /* opacity: 0.5; */
+    transition: all 0.3s ease;
+}
+
+
+.zhuanquan {
+    animation: gulugulu 3s ease-in-out infinite;
+}
+
+/* 无限旋转动画 */
+@keyframes gulugulu {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

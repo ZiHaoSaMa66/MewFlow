@@ -1,0 +1,51 @@
+.App {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main-header {
+
+    width: calc(100vw - 40px);
+    padding: 10px 20px;
+}
+
+.nav-bar a {
+    font-family: "PingFangSC-Medium-ttf";
+}
+
+.content { 
+    overflow-y: auto;
+    max-width: unset;
+    width: 98%;
+    margin: unset;
+}
+
+.music-section { 
+    margin-bottom: 50px;
+}
+
+.welcome-message {
+    margin-top: 30px;
+}
+
+.music-info > *{
+    font-family: "PingFangSC-Medium-ttf";
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+h2 {
+    color: var(--index-h2-text-col);
+}
+
+p {
+    color: var(--index-p-text-col);
+}

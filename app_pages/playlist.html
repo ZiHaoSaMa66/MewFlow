@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MewFlow - 主页</title>
+
+    <link rel="stylesheet" href="../font/fonts.css">
+
+    <link rel="stylesheet" href="../css/theme.css">
+
+    <link rel="stylesheet" href="../css/gpt-base.css">
+    <link rel="stylesheet" href="../css/base.css">
+
+    <link rel="stylesheet" href="../css/index.css">
+
+    <link rel="stylesheet" href="../css/playlist.css">
+
+    <link rel="stylesheet" href="../css/contextMenu.css">
+
+    <link rel="stylesheet" href="../mobi-css/mob.base.css">
+
+</head>
+<body>
+    <div class="App">
+    <div id="notification-container"></div>
+
+    <main class="content">
+
+        <div class="searchMusic">
+
+            <div class="searchInputClass">
+                <input id="searchInput" type="text" placeholder="搜索歌单"  autocomplete="off">
+                <button onclick="">搜索</button>
+            </div>
+        </div>
+
+        <div class="musicPlayLists">
+            <!-- <div class="musicPlayListsItem" style="display: flex;flex-direction: column;">
+
+                <img src="./img/baiLu.jpg" alt="播放列表封面">
+
+                <span class="playListName">播放列表1</span>
+                <span class="playListSongsCount">99</span>
+            </div> -->
+        </div>
+
+        <div class="overPage" >
+            <div class="overPageHeader">
+                <span class="selectPlayListName">播放列表1</span>
+                <span class="hideOverPage">🔽</span>
+            </div>
+
+            <div class="searchMusic">
+                <div class="sortClass">
+                    <select id="sortOrder">
+                        <option value="createdAt">按创建时间排序</option>
+                        <option value="random">按随机排序</option>
+                        <option value="duration">按时长排序</option>
+                        <option value="playCount">按播放次数排序</option>
+                        <option value="title">按乐曲标题排序</option>
+                    </select>
+                    <select id="sortFunc">
+                        <option value="DESC">倒序排列</option>
+                        <option value="ASC">正序排列</option>
+                    </select>
+                    <button onclick="play_current_list_all_music()">播放全部</button>
+                </div>
+            </div>
+
+            <div class="musicLists">
+                <div class="musicListItem">
+                    <span>#1</span>
+                    <img src="./img/baiLu.jpg" alt="封面">
+                    <div class="musicInfo">
+                        <span>Example Song Name</span>
+                        <span>Example Artist Name</span>
+                    </div>
+                    <span>11:11</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+</body>
+<script src="../js/base.js"></script>
+<script src="../js/sort.js"></script>
+<script src="../js/playlist.js"></script>
+<script src="../js/contextMenu.js"></script>
+<script>
+
+    init_sort_func()
+    init_all_playlist_cards()
+
+</script>
+</html>

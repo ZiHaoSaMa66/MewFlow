@@ -1,0 +1,79 @@
+.blockOverPage {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 15%;
+    width: 70%;
+    top: 20%;
+    height: 60%;
+    background-color: var(--main-head-col);
+    z-index: 5;
+    border-radius: 6px;
+    
+}
+
+.blockOverPage_top {
+    width: 100%;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: var(--music-card-title-col);
+}
+
+.blockOverPage_close {
+    position: absolute;
+    right: 16px;
+    cursor: pointer;
+}
+
+#blockOverIframe {
+    display: flex;
+    height: calc(100% - 26px);
+}
+
+.blockOverPage {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    /* background: #fff; */
+    /* border-radius: 8px; */
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); */
+    /* z-index: 9999; */
+}
+
+/* 弹出动画 */
+.blockOverPage.fadeIn {
+    animation: popupShow 0.3s forwards;
+}
+
+.blockOverPage.fadeOut {
+    animation: popupHide 0.3s forwards;
+}
+
+@keyframes popupShow {
+    0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popupHide {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+    }
+}

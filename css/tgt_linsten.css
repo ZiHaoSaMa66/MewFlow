@@ -1,0 +1,108 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: scroll;
+}
+
+body {
+    background: unset;
+    background: var(--app-body-bg-col);
+}
+
+.App {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    scrollbar-width: 0;
+    background: var(--app-body-bg-col);
+    /* padding-top: 100px; */
+}
+
+
+.content {
+    flex: 1;
+    /* padding: 10px;
+    
+    */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.searchInputClass {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+/* 搜索框样式 */
+.configs {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 20px; */
+    flex-direction: column;
+    gap: 12px;
+}
+
+.configs input {
+    /* .searchMusic input { */
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: var(--search-input-border);
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: var(--music-card-bg-col);
+    color: var(--index-h2-text-col);
+}
+
+
+.configs input,.room_status input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: var(--search-input-border);
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: var(--music-card-bg-col);
+    color: var(--index-h2-text-col);
+}
+
+.configs input:focus,.room_status input {
+    border-color: var(--main-theme-col);
+}
+
+.configs button,.room_status button {
+    background-color: var(--login-btn-bg-col);
+    color: var(--login-btn-text-col);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.configs button:hover,.room_status button:hover {
+    background-color: var(--login-btn-bg-hover-col);
+}
+
+.room_status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 40%; */
+    gap: 7px;
+}
+
+.room_status span {
+    color: var(--index-h2-text-col);
+}

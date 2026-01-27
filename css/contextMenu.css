@@ -1,0 +1,43 @@
+/* 粉色系可爱上下文菜单样式 */
+.contextMenu {
+    position: absolute;
+    background-color: var(--main-theme-col); 
+    /* 浅粉色背景 */
+    border: 2px solid var(--app-body-bg-col); /* 粉色边框 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+    padding: 10px;
+    z-index: 1000;
+    /* font-family: 'Comic Sans MS', cursive, sans-serif;  */
+    /* 可爱的字体 */
+    animation: fadeIn_menu 0.3s ease-out; /* 淡入效果 */
+}
+
+.menuItem {
+    padding: 8px 12px;
+    margin: 5px 0;
+    background-color: var(--music-card-bg-col); /* 浅玫红色 */
+    color: var(--music-card-title-col); /* 白色文字 */
+    text-align: center;
+    border-radius: 8px; /* 圆角 */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menuItem:hover {
+    /* background-color: var(--login-btn-bg-hover-col);  */
+    /* 深粉色 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 鼠标悬停阴影 */
+    transform: scale(1.05); /* 放大效果 */
+}
+
+@keyframes fadeIn_menu {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

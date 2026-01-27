@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MewFlow</title>
+
+    <link rel="stylesheet" href="../font/fonts.css">
+
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/gpt-base.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/tgt_linsten.css">
+
+</head>
+
+<body>
+    <div class="App">
+
+
+        <main class="content">
+
+            <div class="configs">
+                <input type="text" style="display:none" name="fake_username">
+                <input type="password" style="display:none" name="fake_password">
+
+                <input type="text" placeholder="ws://... 一起听服务器地址" id="tl_ws_server_url" autocomplete="off">
+                <input type="text" placeholder="房间ID" id="tl_room_id" autocomplete="off">
+                <input type="text" placeholder="用户名" id="tl_user_name" autocomplete="off">
+
+                <input type="text" autocomplete="off" placeholder="一起听分享链接" id="tl_share_link" autocomplete="off">
+
+                <button type="button" onclick="init_join_together_linsten()">加入一起听房间</button>
+            </div>
+
+            <div class="room_status" style="display: none;">
+
+                <span>房间ID: <span id="tl_room_id_show">Null</span></span>
+                <span>当前房间在线人数: <span id="tl_online_count">0</span></span>
+                <span>在线用户列表: <span id="tl_current_user"></span></span>
+                <span>当前音乐: <span id="tl_current_music">Null</span></span>
+
+                <input type="text" class="tl_share_link_output" id="tl_share_link_output" style="width: 50%;" autocomplete="off">
+
+                <button type="button" onclick="generate_share_link()">生成房间分享链接</button>
+                <button type="button" onclick="leave_tl_room()">离开当前房间</button>
+
+
+            </div>
+
+        </main>
+
+
+    </div>
+
+    <script src="../js/base.js"></script>
+
+
+
+    <script src="../js/tgt-linsten/tl_dev.js"></script>
+    <script src="../js/tgt-linsten/tl_dom.js"></script>
+    <script src="../js/tgt-linsten/tl_configs.js"></script>
+
+
+    <script src="../js/tgt-linsten/tl_main.js"></script>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            load_theme();
+            load_tl_config();
+        })
+        
+
+    </script>
+</body>
+
+</html>

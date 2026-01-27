@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MewFlow - 设置</title>
+
+    <link rel="stylesheet" href="../font/fonts.css">
+
+    <link rel="stylesheet" href="../css/theme.css">
+
+    <link rel="stylesheet" href="../css/gpt-base.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/library.css">
+    <link rel="stylesheet" href="../css/notify.css">
+    <link rel="stylesheet" href="../mobi-css/mob.base.css">
+
+    <link rel="stylesheet" href="../css/setting.css">
+
+    <link rel="stylesheet" href="../mobi-css/mob-setting.css">
+
+</head>
+
+<body>
+    <div class="App">
+        <div id="notification-container"></div>
+
+        <main class="content" style="display: flex; flex-direction: column;">
+            <div class="settings-container">
+
+                <!-- Example Setting Group: General Settings -->
+                <div class="settings-group">
+                    <div class="settings-title">外观设置</div>
+
+                    <div class="setting-item">
+                        <label for="theme-select">主题设置</label>
+                        <select id="theme-select">
+                            <option value="default">默认</option>
+                            <option value="dark">夜间</option>
+                            <option value="red">网易云红</option>
+                        </select>
+                    </div>
+
+
+                    <!-- <div class="setting-item">
+                        <label for="dark-mode-toggle">暗黑模式</label>
+                        <input type="checkbox" id="dark-mode-toggle">
+                    </div> -->
+                    <div class="settings-undev-item setting-item">
+                        <label for="dark-mode-toggle">自动切换暗黑模式</label>
+                        <input type="checkbox" id="dark-mode-toggle">
+                    </div>
+
+                    
+
+                    <!-- <div class="setting-item">
+                        <label for="language-select">访问语言</label>
+                        <select id="language-select">
+                            <option value="zh">Chinese</option>
+                            <option value="en">English</option>
+                            <option value="jp">Japanese</option>
+                        </select>
+                    </div> -->
+
+                    <div class="settings-undev-item setting-item">
+                        <label for="big-cover-quality">大封面图质量(px)</label>
+                        <input type="text" name="big-cover-quality" id="big-cover-quality" placeholder="">
+                    </div>
+                    <div class="settings-undev-item setting-item">
+                        <label for="little-cover-quality">小封面图质量(px)</label>
+                        <input type="text" name="little-cover-quality" id="little-cover-quality" placeholder="">
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="block-how-many-size-cover">Any(px)以下的封面图使用默认图代替</label>
+                        <input type="text" name="block-how-many-size-cover" id="block-how-many-size-cover" placeholder="">
+                    </div>
+
+                </div>
+
+                <!-- Example Setting Group: Playback Settings -->
+                <div class="settings-group">
+                    <div class="settings-title">播放设置</div>
+                    <div class="setting-item">
+                        <label for="volume-control">播放音量</label>
+                        <input type="range" id="volume-control" min="0" max="100" value="50">
+                    </div>
+                    <!-- <div class="setting-item">
+                        <label for="crossfade-toggle">跨播放</label>
+                        <input type="checkbox" id="crossfade-toggle">
+                    </div> -->
+
+                    <div class="setting-item">
+                        <label for="audio-load-mode">音频加载模式</label>
+                        <select id="audio-load-mode">
+                            <option value="default">默认</option>
+                            <option value="block">数据块缓冲</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="music_visualize_toggle">显示音乐可视化</label>
+                        <input type="checkbox" id="music_visualize_toggle">
+                    </div>
+
+
+                </div>
+
+                <div class="settings-group">
+                    <div class="settings-title">歌词设置</div>
+                    <div class="setting-item">
+                        <label for="lyrics-delay-control">歌词偏移量</label>
+                        <input type="text" name="lyrics-delay-control" id="lyric-delay-control" placeholder="">
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="lyrics-duration-control">歌词刷新频率</label>
+                        <input type="text" name="lyrics-duration-control" id="lyric-duration-control" placeholder="">
+                    </div>
+                </div>
+
+
+                <!-- Example Setting Group: Notification Settings -->
+                <!-- <div class="settings-group">
+                    <div class="settings-title">通知设置</div>
+                    <div class="setting-item">
+                        <label for="email-notifications">邮件通知</label>
+                        <input type="checkbox" id="email-notifications">
+                    </div>
+                    <div class="setting-item">
+                        <label for="push-notifications">推送通知</label>
+                        <input type="checkbox" id="push-notifications">
+                    </div>
+                </div> -->
+                <button class="save-btn" onclick="save_all_setting()">保存设置</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/base.js"></script>
+    <script src="../js/setting.js"></script>
+    <script>
+
+        parent.showNotification('未开发完全的页面', 'info',3000);
+        init_all_setting()
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+
+.content {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.album-header {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 10px;
+    height: 175px;
+    width: 100%;
+    padding-left: 16px;
+}
+
+.album-header > img {
+    align-self: flex-end;
+    width: 150px;
+    height: unset;
+    border-radius: 50%;
+}
+
+.album-infos {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    gap: 8px;
+
+    /* overflow: hidden; */
+    /* max-width: 100%; */
+    /* flex: 1; */
+    overflow: hidden;
+}
+
+.album-infos span {
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: calc(100vw - 162px - 2%);
+    overflow: hidden;
+    font-family: "PingFangSC-Semibold-ttf";
+}
+
+.album-infos span:nth-child(1) {
+    font-size: 30px;
+    color: var(--login-label-col);
+}
+
+.album-infos span:nth-child(2) {
+    font-size: 36px;
+    color: var(--music-card-title-col);
+}
+
+.album-infos span:nth-child(3) {
+    font-size: 20px;
+    color: var(--music-card-title-col);
+}
+
+
+.album-tracks-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-bottom: 10px;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.album-tracks-line {
+    align-self: flex-start;
+    margin-left: 10px;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+.album-tracks-item {
+
+
+    flex-direction: row;
+
+    display: flex;
+    align-items: center;
+    background-color: var(--music-list-item-bg-col);
+    padding: 10px 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    transition:all 0.3s ease;
+
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+
+    gap: 7px;
+    width: 95.5%;
+
+}
+
+.album-tracks-item span {
+    font-family: "PingFangSC-Semibold-ttf";
+}
+
+.album-tracks-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.album-tracks-item > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.album-tracks-item-duration {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    
+}
+
+.album-tracks-item-number {
+    min-width: 45px;
+    display: flex;
+    justify-content: center;
+    color: var(--music-list-item-no-col);
+}
+
+.album-tracks-item-title {
+    color: var(--music-list-item-title-col);
+}
+.album-tracks-item-artist {
+    color: var(--music-list-item-artist-col);
+}
+
+.album-tracks-item-times {
+    color: var(--music-list-item-timer-col);
+}

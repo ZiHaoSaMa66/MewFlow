@@ -1,0 +1,331 @@
+:root {
+
+    --main-theme-col: #ff6699;
+
+    --app-body-bg-col: linear-gradient(to bottom, #f8f9fa, #ffe6f2);
+
+    /* login.html */
+    /* 登录配置页 */
+    --login-logo-text-col: #ff6699;
+
+    --login-label-col: #555;
+    --login-input-border: 1px solid #ddd;
+    --login-input-bg: #fff;
+    --login-btn-text-col: #fff;
+    --login-btn-bg-col: #ff6699;
+
+    --login-btn-bg-hover-col: #ff4477;
+
+    /* main.html */
+    /* 底部播放条 */
+    --music-player-bg-col: #ff6699;
+    --progress-time-text-col: #333;
+    --music-player-title-text-col: #fff;
+    --music-player-artist-text-col: #fff;
+
+    --progress-time-bg-col: #f0f0f0;
+    --progess-time-fill-bg-col: linear-gradient(90deg, #ff9a9e, #fad0c4);
+    --progress-bar-flow-bg-col: #bbbbbb;
+
+    /* 顶部栏 */
+    --main-head-col: #ff6699;
+    --logo-text-col: #fff;
+    --nav-text-col: #fff;
+
+    --nav-hover-col: #bdbdbd;
+
+    /* 首页 音乐卡片 */
+
+    --index-h2-text-col: black;
+    --index-p-text-col: black;
+
+
+    --music-card-bg-col: #fff;
+    --music-card-title-col: #333;
+    --music-card-artist-col: #777;
+    --music-card-play-btn-bg-col: #ff6699;
+    --music-card-play-btn-text-col: #fff;
+
+    --play-btn-hover-col: #ff4477;
+
+    /* 音乐库 */
+
+    --search-input-bg-col: #fff;
+    --search-input-border: 1px solid #ccc;
+    /* --search-input-text-col: #fff; */
+
+    
+    --select-text-col: #ff69b4;
+    --select-bg-col: #ff69b4;
+
+    /* 排序选择框 */
+    --sort-order-border: 2px solid pink;
+    --sort-bg-col: #ffe6f2;
+    --sort-text-col: #ff69b4;
+
+
+    --sort-hover-bg-col: #ffccdd;
+    --sort-hover-border-col: #ff1493;
+
+    --sort-focus-box-shadow: 0 0 10px #ff69b4;
+
+    /* 音乐列表样式 */
+
+    --music-list-item-bg-col: #fff;
+    --music-list-item-no-col: #333;
+    --music-list-item-title-col: #333;
+
+    --music-list-item-artist-col: #999;
+    --music-list-item-album-col: #999;
+
+    --music-list-item-timer-col: #999;
+
+    /* 音乐播放(歌单)列表 */
+
+    --music-play-list-item-bg-col: #fff;
+    --music-play-list-item-title-col: #333;
+    --music-play-list-item-song-count-col: #666;
+
+    --inner-music-play-list-title-col: #333;
+
+
+    /* 覆盖(上升)层 */
+    --over-page-bg-col: #faeff4;
+    --over-page-title-text-col: #333;
+
+    /* 设置 */
+    --setting-group-bg-col: #ffe6f2;
+    --setting-group-box-shadow: 0 2px 4px rgba(255, 182, 193, 0.4);
+    --setting-title-text-col: #ff69b4;
+    --setting-item-label-col: #d147a3;
+    --setting-input-border: 1px solid #ffa6c9;
+    --setting-input-bg-col: #fff0f5;
+    --setting-select-bg-col: #fff0f5;
+    --save-setting-btn-bg-col: #ff4677;
+
+    /* 点击播放中歌曲封面的上升的覆盖页 */
+    --big-over-page-bg-col: linear-gradient(to bottom, #ffdeee, #fde9f3);
+
+    --big-over-page-title-col: white;
+    --big-over-page-artist-col: rgba(255, 255, 255, 0.7);
+    --big-over-page-lyrics-container-bg-col: #1e1e1e;
+    --big-over-page-lyrics-container-border: 1px solid #333;
+
+    --big-over-page-lyrics-line-font-col: rgba(255, 255, 255, 0.7);
+    --big-over-page-lyrics-active: #fff;
+    --big-over-page-lyrice-background-cover:rgba(0,0,0,0.12);
+
+    --play-queue-ui-bg-col: #f9f4f8;
+    --play-queue-item-bg-col: #fff;
+    --play-queue-now-playing-bg-col: #ffc6d9;
+    --play-queue-now-playing-keyframe-bg2-col: #ffbad1;
+    --play-queue-item-font-col: black;
+    --play-queue-title-col: black;
+    --play-queue-artist-col: #555;
+}
+
+.red-theme {
+    --main-theme-col: #d43f3a;
+
+    --app-body-bg-col: linear-gradient(to bottom, #fff5f5, #ffcccc);
+
+    /* login.html */
+    --login-logo-text-col: #d43f3a;
+    --login-label-col: #444;
+    --login-input-border: 1px solid #ddd;
+    --login-input-bg: #fff;
+    --login-btn-text-col: #fff;
+    --login-btn-bg-col: #d43f3a;
+    --login-btn-bg-hover-col: #b52b27;
+
+    /* main.html */
+    --music-player-bg-col: #d43f3a;
+    --progress-time-text-col: #222;
+    --music-player-title-text-col: #fff;
+    --music-player-artist-text-col: #fff;
+
+    --progress-time-bg-col: #e0e0e0;
+    --progess-time-fill-bg-col: linear-gradient(90deg, #ff8b8b, #ff6b6b);
+    --progress-bar-flow-bg-col: #aaaaaa;
+
+    /* 顶部栏 */
+    --main-head-col: #d43f3a;
+    --logo-text-col: #fff;
+    --nav-text-col: #fff;
+    --nav-hover-col: #9e9e9e;
+
+    /* 首页 音乐卡片 */
+    --index-h2-text-col: black;
+    --index-p-text-col: black;
+    --music-card-bg-col: #fff;
+    --music-card-title-col: #222;
+    --music-card-artist-col: #666;
+    --music-card-play-btn-bg-col: #d43f3a;
+    --music-card-play-btn-text-col: #fff;
+    --play-btn-hover-col: #b52b27;
+
+    /* 音乐库 */
+    --search-input-bg-col: #fff;
+    --search-input-border: 1px solid #bbb;
+
+    --select-text-col: #d43f3a;
+    --select-bg-col: #d43f3a;
+
+    /* 排序选择框 */
+    --sort-order-border: 2px solid #ff9999;
+    --sort-bg-col: #ffcccc;
+    --sort-text-col: #d43f3a;
+    --sort-hover-bg-col: #ffb3b3;
+    --sort-hover-border-col: #b52b27;
+    --sort-focus-box-shadow: 0 0 10px #d43f3a;
+
+    /* 音乐列表 */
+    --music-list-item-bg-col: #fff;
+    --music-list-item-no-col: #222;
+    --music-list-item-title-col: #222;
+    --music-list-item-artist-col: #777;
+    --music-list-item-album-col: #777;
+    --music-list-item-timer-col: #777;
+
+    /* 音乐播放(歌单)列表 */
+    --music-play-list-item-bg-col: #fff;
+    --music-play-list-item-title-col: #222;
+    --music-play-list-item-song-count-col: #444;
+    --inner-music-play-list-title-col: #222;
+
+    /* 覆盖(上升)层 */
+    --over-page-bg-col: #feeaea;
+    --over-page-title-text-col: #222;
+
+    /* 设置 */
+    --setting-group-bg-col: #ffcccc;
+    --setting-group-box-shadow: 0 2px 4px rgba(255, 102, 102, 0.4);
+    --setting-title-text-col: #d43f3a;
+    --setting-item-label-col: #b52b27;
+    --setting-input-border: 1px solid #ff7f7f;
+    --setting-input-bg-col: #ffe6e6;
+    --setting-select-bg-col: #ffe6e6;
+    --save-setting-btn-bg-col: #b52b27;
+
+    /* 播放中歌曲封面上升的覆盖页 */
+    --big-over-page-bg-col: linear-gradient(to bottom, #ffdddd, #ffbbbb);
+    --big-over-page-title-col: white;
+    --big-over-page-artist-col: rgba(255, 255, 255, 0.7);
+    --big-over-page-lyrics-container-bg-col: #1e1e1e;
+    --big-over-page-lyrics-container-border: 1px solid #333;
+
+    --big-over-page-lyrics-line-font-col: rgba(255, 255, 255, 0.7);
+    --big-over-page-lyrics-active: #fd3d3d;
+    --big-over-page-lyrice-background-cover:rgba(0,0,0,0.12);
+
+    --play-queue-ui-bg-col: #fbe4e4;
+    --play-queue-item-bg-col: #fff;
+    --play-queue-now-playing-bg-col: #ff9999;
+    --play-queue-now-playing-keyframe-bg2-col: #ff7777;
+    --play-queue-item-font-col: black;
+    --play-queue-title-col: black;
+    --play-queue-artist-col: #444;
+}
+
+.dark-theme {
+    --main-theme-col: #1db954;
+
+    --app-body-bg-col: linear-gradient(to bottom, #121212, #1e1e1e);
+
+    /* login.html */
+    --login-logo-text-col: #1db954;
+    --login-label-col: #bbb;
+    --login-input-border: 1px solid #444;
+    --login-input-bg: #222;
+    --login-btn-text-col: #fff;
+    --login-btn-bg-col: #1db954;
+    --login-btn-bg-hover-col: #18a349;
+
+    /* main.html */
+    --music-player-bg-col: #181818;
+    --progress-time-text-col: #ddd;
+    --music-player-title-text-col: #fff;
+    --music-player-artist-text-col: #bbb;
+
+    --progress-time-bg-col: #333;
+    --progess-time-fill-bg-col: linear-gradient(90deg, #1db954, #66d36e);
+    --progress-bar-flow-bg-col: #666;
+
+    /* 顶部栏 */
+    --main-head-col: #181818;
+    --logo-text-col: #1db954;
+    --nav-text-col: #fff;
+    --nav-hover-col: #1db954;
+
+    /* 首页 音乐卡片 */
+    --index-h2-text-col: white;
+    --index-p-text-col: white;
+    --music-card-bg-col: #222;
+    --music-card-title-col: #fff;
+    --music-card-artist-col: #bbb;
+    --music-card-play-btn-bg-col: #1db954;
+    --music-card-play-btn-text-col: #fff;
+    --play-btn-hover-col: #18a349;
+
+    /* 音乐库 */
+    --search-input-bg-col: #333;
+    --search-input-border: 1px solid #444;
+
+    --select-text-col: #1db954;
+    --select-bg-col: #1db954;
+
+    /* 排序选择框 */
+    --sort-order-border: 2px solid #1db954;
+    --sort-bg-col: #222;
+    --sort-text-col: #1db954;
+    --sort-hover-bg-col: #333;
+    --sort-hover-border-col: #18a349;
+    --sort-focus-box-shadow: 0 0 10px #1db954;
+
+    /* 音乐列表 */
+    --music-list-item-bg-col: #222;
+    --music-list-item-no-col: #fff;
+    --music-list-item-title-col: #fff;
+    --music-list-item-artist-col: #bbb;
+    --music-list-item-album-col: #bbb;
+    --music-list-item-timer-col: #bbb;
+
+    /* 音乐播放(歌单)列表 */
+    --music-play-list-item-bg-col: #222;
+    --music-play-list-item-title-col: #fff;
+    --music-play-list-item-song-count-col: #bbb;
+    --inner-music-play-list-title-col: #fff;
+
+    /* 覆盖(上升)层 */
+    --over-page-bg-col: #181818;
+    --over-page-title-text-col: #fff;
+
+    /* 设置 */
+    --setting-group-bg-col: #222;
+    --setting-group-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    --setting-title-text-col: #1db954;
+    --setting-item-label-col: #18a349;
+    --setting-input-border: 1px solid #1db954;
+    --setting-input-bg-col: #333;
+    --setting-select-bg-col: #333;
+    --save-setting-btn-bg-col: #1db954;
+
+    /* 播放中歌曲封面上升的覆盖页 */
+    --big-over-page-bg-col: linear-gradient(to bottom, #181818, #1e1e1e);
+    --big-over-page-title-col: white;
+    --big-over-page-artist-col: rgba(255, 255, 255, 0.7);
+    --big-over-page-lyrics-container-bg-col: #121212;
+    --big-over-page-lyrics-container-border: 1px solid #444;
+    --big-over-page-lyrics-line-font-col: #888;
+    --big-over-page-lyrics-active: #27e269;
+    --big-over-page-lyrice-background-cover:rgba(255,255,255,0.12);
+
+    --play-queue-ui-bg-col: linear-gradient(to bottom, #121212, #1e1e1e);
+    --play-queue-item-bg-col: #222;
+    --play-queue-now-playing-bg-col: #1db954;
+    --play-queue-now-playing-keyframe-bg2-col: #1db954af;
+    --play-queue-item-font-col: #fff;
+    --play-queue-title-col: #fff;
+    --play-queue-artist-col: #bbb;
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MewFlow - 登录</title>
+
+    <link rel="stylesheet" href="../font/fonts.css">
+    
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/gpt-base.css">
+    <link rel="stylesheet" href="../css/base.css">
+
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/notify.css">
+
+    <link rel="stylesheet" href="../mobi-css/mob.base.css">
+
+</head>
+<body>
+
+    <div class="App">
+    <div id="notification-container"></div>
+    <div class="login-container">
+        <h1 class="login-logo">MewFlow</h1>
+        <!-- <form class="login-form" action="/login" method="POST"> -->
+            <div class="login-form"></div>
+            <div class="form-group">
+                <label for="server_url">服务器地址</label>
+                <input type="text" id="server_url" name="server_url" placeholder="http(s)://..." required>
+            </div>
+            <div class="form-group">
+                <label for="username">用户喵</label>
+                <input type="text" id="username" name="username" placeholder="输入用户喵" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密喵</label>
+                <input type="password" id="password" name="password" placeholder="输入密喵" required>
+            </div>
+            <button type="submit" class="login-btn" onclick="loginSaveConfig();">登录</button>
+            <button class="login-btn" onclick="parent.miaoplay()" style="margin-top: 12px;">内置账号快速登录</button>
+
+        </div>
+        <!-- </form> -->
+        <!-- <button onclick="showNotification('test','info',5000)">test2</button> -->
+        <!-- <button onclick="navigateTo('index.html')">test Btn</button> -->
+    </div>
+
+</div>
+</body>
+<script src="../js/base.js"></script>
+<script src="../js/login.js"></script>
+</html>

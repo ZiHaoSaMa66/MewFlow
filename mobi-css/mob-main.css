@@ -1,0 +1,5 @@
+@media screen and (max-width: 500px) {
+	.innerPage iframe {
+		top: 60.72px;
+	}
+}

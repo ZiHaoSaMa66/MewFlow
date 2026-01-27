@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cat-Pen-ttf';
+    /* font-family: "PingFangSC-Medium-ttf"; */
+    transition: all 0.3s ease-in-out;
+}
+
+.login-logo {
+    font-size: 2em;
+    color: var(--login-logo-text-col);
+    font-weight: bold;
+    font-family: 'Cat-Pen-ttf';
+}
+
+.logo {
+    font-size: 2em;
+    font-family: 'Cat-Pen-ttf';
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.nav-bar a {
+    font-size: 1.1em;
+}

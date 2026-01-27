@@ -1,0 +1,23 @@
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.login-container {
+    width: 60vw;
+    max-width: unset;
+}
+
+input {
+    width: 96%;
+    color: var(--index-p-text-col);
+}
+
+.logo {
+    font-family: '';
+}

@@ -1,0 +1,323 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Arial', sans-serif; */
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 顶部导航栏样式 */
+.main-header {
+    /* background-color: #ff6699; */
+    /* color: #fff; */
+    padding: 10px 20px;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+/* .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    cursor: pointer;
+} */
+
+.nav-bar a:hover {
+    /* color: #ffe6f0; */
+}
+
+/* 主内容区域 */
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* 播放列表样式 */
+.musicPlayLists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.musicListItem > span , .musicInfo span{
+    font-family: "PingFangSC-Semibold-ttf";
+
+}
+/* time */
+.musicListItem > span {
+    color: var(--music-list-item-timer-col);
+}
+
+.musicPlayListsItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var( --music-play-list-item-bg-col);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.musicListItem > span:first-child {
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    color: var(--music-list-item-no-col);
+}
+
+
+.musicPlayListsItem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.musicPlayListsItem img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.playListName {
+    /* font-size: 1.2em; */
+    /* font-weight: bold; */
+    color: var(--music-play-list-item-title-col);
+    max-width: 115px;
+    overflow-y: hidden;
+    text-wrap: nowrap;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.playListSongsCount {
+    font-size: 0.9em;
+    color: var(--music-play-list-item-song-count-col);
+}
+
+/* 覆盖层样式 */
+.overPage {
+    position: fixed;
+    bottom: -100%; /* 初始隐藏 */
+    left: 0;
+    width: 100%;
+    height: 90%;
+    background-color: var(--over-page-bg-col);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: bottom 0.5s ease;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.overPage.visible {
+    bottom: 0; /* 显示时从底部滑出 */
+}
+
+.hideOverPage {
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #ff6699;
+    transition: transform 0.3s ease;
+}
+
+.hideOverPage:hover {
+    transform: rotate(180deg);
+}
+
+/* 音乐列表样式 */
+.musicLists {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: auto;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.musicListItem {
+    display: flex;
+    align-items: center;
+    background-color: var(--music-list-item-bg-col);
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    gap: 12px;
+
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+
+    width: 95%;
+}
+
+.musicListItem:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.overPageHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.selectPlayListName {
+    color: var(--over-page-title-text-col);
+}
+
+.musicListItem img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+
+}
+
+.musicInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.musicInfo > span:first-child {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--music-list-item-title-col);
+}
+
+.musicInfo > span:last-child {
+    font-size: 0.9em;
+    /* color: #666; */
+}
+
+.musics_artist,.musics_album {
+    cursor: pointer;
+    color: var(--music-list-item-artist-col);
+}
+
+.searchInputClass {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+/* 搜索框样式 */
+.searchMusic {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 20px; */
+    flex-direction: column;
+    /* gap: 12px; */
+}
+
+.searchMusic input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: var(--search-input-border);
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: var(--music-card-bg-col);
+    color: var(--index-h2-text-col);
+}
+
+.searchMusic input:focus {
+    border-color: var(--main-theme-col);
+}
+
+.searchMusic button {
+    background-color: var(--login-btn-bg-col);
+    color: var(--login-btn-text-col);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.searchMusic button:hover {
+    background-color: #ff4677;
+}
+.sortClass {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    align-self: flex-start;
+    gap: 12px;
+}
+
+#sortOrder,#sortFunc {
+    width: 200px;
+    padding: 10px;
+    border: var(--sort-order-border);
+    border-radius: 10px;
+    background-color: var(--sort-bg-col); /* 浅粉背景 */
+    /* font-family: 'Comic Sans MS', cursive;  */
+    /* 可爱字体 */
+    font-size: 16px;
+    color: var(--sort-text-col); /* 甜美粉色 */
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+#sortOrder:hover,#sortFunc:hover {
+    background-color: var(--sort-hover-bg-col);
+    border-color: var(--sort-hover-border-col);
+}
+
+#sortOrder:focus,#sortFunc:focus {
+    box-shadow: var(--sort-focus-box-shadow);
+}
+
+#in_the_end {
+    margin-bottom: 12px;
+}

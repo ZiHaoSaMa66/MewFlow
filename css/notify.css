@@ -1,0 +1,67 @@
+#notification-container {
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* 通知之间的间距 */
+    z-index: 1000;
+    
+}
+
+/* 通知的基本样式 */
+.notification {
+    position: relative;
+    min-width: 300px;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s, transform 0.3s, margin 0.3s; /* 增加 margin 的过渡效果 */
+
+}
+
+/* 不同等级的通知颜色 */
+.notification-info {
+    background-color: #17a2b8;
+}
+.notification-warn {
+    background-color: #ffc107;
+    color: black;
+}
+.notification-error {
+    background-color: #dc3545;
+}
+
+.notification-success {
+    background-color: #28a745;
+}
+
+.notification-pink {
+    background-color: #e83e8c;
+}
+
+/* 进入动画 */
+.notification-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 退出动画 */
+.notification-hide {
+    opacity: 0;
+    transform: translateY(-20px);
+    margin-bottom: -60px; /* 通过减少 margin 实现平滑收缩 */
+}
+
+/* 倒计时横线 */
+.notification-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
