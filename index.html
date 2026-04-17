@@ -41,7 +41,7 @@
             <nav class="nav-bar">
                 <a onclick="navTo('./app_pages/index.html')">首页</a>
                 <a onclick="navTo('./app_pages/library.html')">音乐库</a>
-                <a onclick="openBlockOverPage('一起听', './app_pages/tgt_linsten.html')">一起听</a>
+                <!-- <a onclick="openBlockOverPage('一起听', './app_pages/tgt_linsten.html')">一起听</a> -->
                 <a onclick="navTo('./app_pages/playlist.html')">歌单列表</a>
                 <a onclick="navTo('./app_pages/setting.html')">设置</a>
             </nav>
@@ -97,8 +97,8 @@
 
         </div>
 
-        <div class="blockOverPage" >
-            <div class="blockOverPage_top" >
+        <div class="blockOverPage">
+            <div class="blockOverPage_top">
                 <span class="blockOverPage_title"></span>
                 <span class="blockOverPage_close" onclick="closeBlockOverPage()">❌</span>
             </div>
@@ -107,7 +107,7 @@
 
         <div class="bigMusicOverPage">
             <div class="bmBackGroundCover"></div>
-            
+
             <div class="bigMusicTopBar">
                 <span class="hideOverPage" onclick="hideBigMusicUi()">🔽</span>
                 <span class="bMc_topBar_title">歌曲</span>
@@ -132,7 +132,7 @@
                                 <span class="musicInfo_title">UnLoaded</span>
                                 <span class="musicInfo_artist">Artist</span>
                             </div>
-            
+
                             <div class="bigMusicProgress musicPlayer_progress">
                                 <span class="bigMusicProgress_current_time progress_time current_time">0:00</span>
                                 <div class="bigMusic_progress_bar progress_bar">
@@ -141,17 +141,17 @@
                                 </div>
                                 <span class="bigMusic_progress_all_time progress_time total_time">0:00</span>
                             </div>
-            
-            
-            
+
+
+
                             <div class="bigMusic_controls">
                                 <div onclick="switch_play_que_mode()" class="que_mode_btn">🔁</div>
                                 <div onclick="prevMusic()">⏮️</div>
                                 <div class="audio_plays_btn" onclick="togglePlayMusic()">⏯️</div>
                                 <div onclick="nextMusic()">⏭️</div>
                                 <div onclick="show_big_music_queue_ui()">#️⃣</div>
-            
-            
+
+
                             </div>
                         </div>
 
@@ -165,7 +165,8 @@
                             </div>
                         </div>
 
-                        <canvas id="visualizer" style="position: absolute; top: 0; left: 0;width: 100%; height: 100%; z-index: -1;"></canvas>
+                        <canvas id="visualizer"
+                            style="position: absolute; top: 0; left: 0;width: 100%; height: 100%; z-index: -1;"></canvas>
 
                     </div>
                 </div>
@@ -177,7 +178,7 @@
         </div>
 
 
-        <div class="bigMusic_queue_ui" >
+        <div class="bigMusic_queue_ui">
             <div class="bigMusic_queue_title">
                 <span class="pointer" onclick="hide_big_music_queue_ui()">❌</span>
                 <span>播放列表</span>
@@ -216,21 +217,16 @@
 <script src="./js/cy-min.js"></script>
 <script src="./js/navidromeAPI.js"></script>
 <script src="./js/musicVisualization.js"></script>
-<!-- <script src="./js/monetColor.js"></script> -->
 <script src="./js/betterPlayColor.js"></script>
 <script src="./js/lyrics.js"></script>
 
 <script src="./js/main.js"></script>
 <script src="./js/mainSubPage.js"></script>
 <script src="./js/announcement.js"></script>
-<script src="./js/dev.js"></script>
 
-<!-- <script src="./js/tgt-linsten/tl_dev.js"></script> -->
-<!-- <script src="./js/tgt-linsten/tl_main.js"></script> -->
 
 <script>
     init();
-    // MewFlow MusicApp
 </script>
 
 </html>

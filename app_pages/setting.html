@@ -21,6 +21,8 @@
 
     <link rel="stylesheet" href="../mobi-css/mob-setting.css">
 
+    
+
 </head>
 
 <body>
@@ -38,7 +40,7 @@
                         <label for="theme-select">主题设置</label>
                         <select id="theme-select">
                             <option value="default">默认</option>
-                            <option value="dark">夜间</option>
+                            <option value="dark">夜间酷黑</option>
                             <option value="red">网易云红</option>
                         </select>
                     </div>
@@ -135,6 +137,7 @@
                     </div>
                 </div> -->
                 <button class="save-btn" onclick="save_all_setting()">保存设置</button>
+                <button class="logout-btn save-btn" onclick="clear_and_logout()">登出账号</button>
             </div>
         </main>
     </div>
@@ -143,7 +146,7 @@
     <script src="../js/setting.js"></script>
     <script>
 
-        parent.showNotification('未开发完全的页面', 'info',3000);
+        // parent.showNotification('未开发完全的页面', 'info',3000);
         init_all_setting()
 
     </script>

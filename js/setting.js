@@ -100,3 +100,13 @@ function save_all_setting(){
 
     parent.showNotification("设置保存成功", "success",2000);
 }
+
+
+function clear_and_logout() {
+    window.removeLocalStorageItem("server_url");
+    window.removeLocalStorageItem("username");
+    window.removeLocalStorageItem("password");
+    window.top.api = null;
+    window.api = null;
+    parent.navTo('./app_pages/login.html');
+}
