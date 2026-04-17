@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,18 +18,85 @@
     <link rel="stylesheet" href="../mobi-css/mob.base.css">
 
 </head>
+
 <body>
     <div class="App">
-    <div id="notification-container"></div>
+        <div id="notification-container"></div>
 
-    <main class="content">
-        <div class="welcome-message">
-            <h2>欢迎回来喵~</h2>
-            <p>快来挑选一首歌开始播放吧！</p>
-        </div>
-        <div class="music-section">
-            <!-- 示例音乐卡片 -->
-            <!-- <div class="music-card">
+        <main class="content">
+            <div class="welcome-message">
+                <h2>欢迎回来喵~</h2>
+                <p>快来挑选一首歌开始播放吧！</p>
+            </div>
+
+
+            <div class="music-section">
+                <!-- 示例音乐卡片 -->
+                <div class="music-card">
+                    <!-- <img src="../img/def_cover.png" alt="" class="album-art"> -->
+                    <svg width="200" height="200" class="album-art" xmlns="http://www.w3.org/2000/svg">
+
+                        <g>
+                            
+                            <rect x="-0.11429" y="0.17143" id="svg_1" fill="#222" height="200" width="200" />
+                            <rect stroke="null" id="svg_2" fill="#727272" rx="4" height="8.57143" width="86.28572"
+                                y="25.42855" x="56.85714" />
+                            <rect stroke="null" id="svg_3" fill="#A5A5AA" rx="22" height="120" width="120" y="40"
+                                x="40" />
+                            <g stroke="null" id="svg_12">
+                                <ellipse stroke="null"
+                                    transform="matrix(1.21279 -0.324966 0.324966 1.21279 -53.5916 13.8664)" id="svg_5"
+                                    ry="7" rx="9" cy="111.04144" cx="81.14578" />
+                                <rect stroke="null" id="svg_6" height="43.94499" width="6.27786" y="78.97493"
+                                    x="85.19374" />
+                                <ellipse stroke="null"
+                                    transform="matrix(1.21279 -0.324966 0.324966 1.21279 -51.9005 23.6988)" id="svg_7"
+                                    ry="7" rx="9" cy="109.84144" cx="111.56109" />
+                                <rect stroke="null" id="svg_8" height="51.98064" width="6.27786" y="68.42813"
+                                    x="122.86088" />
+                                <polygon stroke="null" id="svg_9"
+                                    points="85.69597625732422,78.97492218017578 129.13873291015625,66.4192123413086 129.13873291015625,76.46378326416016 85.69597625732422,89.01949310302734 " />
+                            </g>
+                        </g>
+                    </svg>
+
+                    <div class="music-info">
+                        <h3 class="song-title">私人电台（标准）</h3>
+                        <p class="artist-name">为你定制的推荐</p>
+                        <button class="play-btn" onclick="startAgent()">立刻开始</button>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="album-art">
+
+                        <g>
+                            <rect id="svg_1" fill="#222" height="200" width="200" />
+                            <path id="svg_2" stroke-linecap="round" stroke-width="12" stroke="white" fill="none"
+                                d="m50,80a50,50 0 0 1 100,0" />
+                            <rect id="svg_3" fill="white" rx="8" height="40" width="20" y="80" x="40" />
+                            <path id="svg_4" opacity="0.7" stroke-linecap="round" stroke-width="6" stroke="white"
+                                fill="none" d="m25,90a25,25 0 0 0 0,20" />
+                            <rect id="svg_5" fill="white" rx="8" height="40" width="20" y="80" x="140" />
+                            <path id="svg_6" opacity="0.7" stroke-linecap="round" stroke-width="6" stroke="white"
+                                fill="none" d="m175,90a25,25 0 0 1 0,20" />
+                            <path id="svg_7" stroke-linejoin="round" stroke-linecap="round" stroke-width="10"
+                                stroke="white" fill="none" d="m95,85l0,40a10,10 0 1 0 15,10" />
+                            <path id="svg_8" stroke-linejoin="round" stroke-linecap="round" stroke-width="8"
+                                stroke="white" fill="none" d="m95,85l20,-10l0,15" />
+                            <path stroke="white" id="svg_9" stroke-linejoin="round" stroke-linecap="round"
+                                stroke-width="10" fill="none" d="m64,163.5l86,0l-21.5,-21.5m21.5,21.5l-21.5,21.5" />
+                            <rect id="svg_10" opacity="0.8" fill="white" rx="5" height="15" width="30" y="15" x="85" />
+                            <rect id="svg_11" opacity="0.8" fill="white" rx="2" height="8" width="8" y="30" x="88" />
+                            <rect id="svg_12" opacity="0.8" fill="white" rx="2" height="8" width="8" y="30" x="104" />
+                        </g>
+                    </svg>
+                    <div class="music-info">
+                        <h3 class="song-title">私人电台（通勤）</h3>
+                        <p class="artist-name">在路上想来点音乐?</p>
+                        <button class="play-btn">来!</button>
+                    </div>
+                </div>
+                <!-- <div class="music-card">
                 <img src="./img/baiLu.jpg" alt="专辑封面" class="album-art">
                 <div class="music-info">
                     <h3 class="song-title">歌曲名</h3>
@@ -36,16 +104,20 @@
                     <button class="play-btn">播放</button>
                 </div>
             </div> -->
-        </div>
-    </main>
 
-</div>
+
+            </div>
+        </main>
+
+    </div>
 </body>
 <script src="../js/base.js"></script>
 <script src="../js/index.js"></script>
+<script src="../js/agent/initAgent.js"></script>
 <script>
 
-init_index();
+    init_index();
 
 </script>
+
 </html>
