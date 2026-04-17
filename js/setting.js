@@ -83,20 +83,37 @@ function load_style_setting(){
     document.getElementById("theme-select").value = sel_theme
 
 }
+// agent
+function save_agent_setting(){
+    const u = document.getElementById("agent-api-base-url").value
+    const k = document.getElementById("agent-api-key").value
+
+    if (u == '' || k == '') return;
+
+    parent.setLocalStorageItem("agentApiUrl",u)
+    parent.setLocalStorageItem("agentApiKey",k)
+}
+
+function load_agent_setting(){
+    const u = parent.getLocalStorageItem("agentApiUrl")
+    const k = parent.getLocalStorageItem("agentApiKey")
+    document.getElementById("agent-api-base-url").value = u
+    document.getElementById("agent-api-key").value = k
+}
 
 // 初始化所有设置
 function init_all_setting(){
-
     load_style_setting()
     load_lyrics_setting()
     load_play_setting()
+    load_agent_setting()
 }
 
 function save_all_setting(){
-
     save_style_setting()
     save_lyrics_setting()
     save_play_setting()
+    save_agent_setting()
 
     parent.showNotification("设置保存成功", "success",2000);
 }
