@@ -128,13 +128,12 @@ function dbg(s) {
 
 }
 
-function miaoplay() {
-    try {
-        miaoplay_entry();
-        init();
-    } catch (error) {
-        showNotification("非开发环境,请自行完成配置", "error", 3500);
-    }
+function lauchDemoMode() {
+    setLocalStorageItem("server_url","https://demo.navidrome.org");
+    setLocalStorageItem("username","demo");
+    setLocalStorageItem("password","demo");
+    showNotification("以演示模式启动","info",1500);
+    init();
 }
 
 function init() {
