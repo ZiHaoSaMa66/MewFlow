@@ -42,7 +42,7 @@ body {
 /* 头部区域 —— 固定 */
 .q-header {
     text-align: center;
-    margin-bottom: 8px;
+    /* margin-bottom: 0px; */
     flex-shrink: 0;
     /* background: inherit;      */
     background: unset;
@@ -88,7 +88,7 @@ body {
 .q-title {
     font-size: 17px;
     margin: 6px 0 10px 0;
-    color: #333;
+    color: var(--index-p-text-col);
     text-align: center;
     line-height: 1.35;
     flex-shrink: 0;
@@ -247,7 +247,7 @@ body {
 
     .q-title {
         font-size: 18px;
-        margin: 6px 0 12px;
+        margin: 0px 0 4px;
     }
 
     .mini-questionnaire {

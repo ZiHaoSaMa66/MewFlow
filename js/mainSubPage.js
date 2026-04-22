@@ -6,7 +6,7 @@ function showSubPage(pageRoute) {
 
     // 添加一点动画效果
     subMainBlock.style.opacity = 0;
-    setTimeout(function() {
+    setTimeout(function () {
         subMainBlock.style.opacity = 1;
     }, 100);
 
@@ -18,10 +18,10 @@ function closeSubIframe() {
     subMainBlock.style.transition = "opacity 0.1s ease"; // 添加过渡效果
     subMainBlock.style.opacity = 0;
 
-    setTimeout(function() {
+    setTimeout(function () {
         subPageIframe.src = "about:blank";
         subMainBlock.style.display = "none";
-    }, 100); 
+    }, 100);
 }
 
 
@@ -31,12 +31,16 @@ window.parent.closeSubIframe = closeSubIframe;
 
 var temp_iframe_url = "";
 
+function clearBlockOverPage() {
+    document.getElementById("blockOverIframe").src = '';
+}
+
 function openBlockOverPage(titleName, iframe_url) {
     const blockOverPage = document.getElementsByClassName("blockOverPage")[0];
 
     document.getElementsByClassName("blockOverPage_title")[0].innerHTML = titleName || "";
 
-    if (iframe_url!== temp_iframe_url){
+    if (iframe_url !== temp_iframe_url) {
         document.getElementById("blockOverIframe").src = iframe_url || "";
         temp_iframe_url = iframe_url;
     }
@@ -45,7 +49,7 @@ function openBlockOverPage(titleName, iframe_url) {
     // 移除关闭动画，确保重新触发打开动画
     blockOverPage.classList.remove("fadeOut");
     blockOverPage.style.display = "flex";
-    
+
     // 触发弹出动画
     setTimeout(() => {
         blockOverPage.classList.add("fadeIn");
