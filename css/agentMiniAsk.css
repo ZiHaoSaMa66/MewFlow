@@ -105,6 +105,7 @@ body {
     padding: 2px 4px 6px 2px;    /* 右侧留一点空间避免滚动条遮挡内容 */
     align-content: start;
     scrollbar-width: thin;       /* 细滚动条 */
+    scrollbar-width: none;
     scrollbar-color: var(--main-theme-col) #e0e0e0;
     background: inherit;         
     /* 继承背景，防止滚动时背景错位 */
