@@ -111,7 +111,7 @@ function initMiniQuestionnaire() {
     };
 }
 
-console.log(nd);
+console.debug(nd);
 
 
 window.addEventListener('load', initMiniQuestionnaire);

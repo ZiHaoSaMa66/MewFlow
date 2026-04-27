@@ -58,8 +58,9 @@ function startAgent(scene) {
   }
   console.debug(`获取到的场景${scene}`)
 
-  window.top.playList = [];
-  window.top.audio.src = '';
+  window.top.remove_all_songs_from_queue();
+  // 因为没有给当前播放索引复位所以才炸的.
+  
   window.top.showNotification("启动电台.. 将清空播放列表", 'success', 2000);
 
   currentScene = scene;
@@ -203,7 +204,8 @@ function run_onetime_push_music_workFlow(baseLiked, scene) {
 
     // 2编: 前面清空了播放列表直接调播放 
     // 不然点击手动清空播放列表再重开推荐模式就只推歌而不自动播放了..
-    const id = window.top.playList[0].musicId
+    // 不对不对...
+    const id = window.top.playList[0].musicId;
     window.top.playMusic_with_musicId(id)
 
     // 直接追加的没有封面图 fix一下.
@@ -298,6 +300,9 @@ function agent_next_music_callback() {
 function buildAskAiPrompt(n, baseLiked, scene) {
   const now = new Date();
   const currentTimeStr = `${now.getHours()}点${now.getMinutes()}分`;
+
+  // todo: 添加当当前请求的歌曲没有符合需求的 
+  // 允许让LLM扩大请求随机的范围
 
   return `
 当前时间：${currentTimeStr}
