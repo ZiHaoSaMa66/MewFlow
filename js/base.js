@@ -134,7 +134,7 @@ function load_theme() {
     // html.classList.remove("dark-theme","red-theme")
 
     const sel_theme = getLocalStorageItem("select-theme") 
-    console.log("try set theme = "+sel_theme)
+    console.debug("try set theme = "+sel_theme)
     html.classList.remove("red-theme","dark-theme")
     if (sel_theme != null){
         const mix = `${sel_theme}-theme`

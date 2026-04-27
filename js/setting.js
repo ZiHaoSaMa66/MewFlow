@@ -84,6 +84,17 @@ function load_style_setting() {
 
 }
 // agent
+function clear_agent_base_liked() {
+    window.setLocalStorageItem("agentBaseLiked", "");
+    // ...
+    window.top.agent.init_agent_setting();
+    console.debug("尝试清除了问卷保存的基础喜好")
+}
+
+function clear_agent_history_action() {
+    window.setLocalStorageItem("agentPlayHistory","{}");
+}
+
 function save_agent_setting() {
     let u = document.getElementById("agent-api-base-url").value
     let k = document.getElementById("agent-api-key").value

@@ -86,9 +86,7 @@ function initMiniQuestionnaire() {
 
     submitBtn.addEventListener('click', () => {
         console.log('问卷提交:', answers);
-        alert('✅ 感谢填写！\n你的音乐偏好已记录，我们会据此推荐歌曲。');
-        // 可在此处添加关闭弹窗逻辑，例如：
-        // if (window.parent && window.parent.closeBlockOverPage) window.parent.closeBlockOverPage();
+        window.top.showNotification("当前偏好已提交 正在预热推荐系统..",'success',1500);
 
         window.top.agent.formCallBackStart(answers.musicStyle,answers.scene)
     });
@@ -96,7 +94,7 @@ function initMiniQuestionnaire() {
     skipBtn.addEventListener('click', () => {
         if (confirm('确定跳过吗？用两分钟完成问卷可以更好的帮我们了解您')) {
             answers = { musicStyle: [], scene: [] };
-            alert('已跳过，使用默认推荐。');
+            window.top.showNotification("以无偏好启动 正在预热推荐系统..",'info',1000);
             window.top.agent.formCallBackStart("","")
         }
     });

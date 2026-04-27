@@ -333,5 +333,5 @@ class tl_enevt_handler {
 }
 if (!window_top.tl_enevt_handler) {
     window_top.tl_enevt_handler = new tl_enevt_handler();
-    console.log("register tl_enevt_handler")
+    console.debug("register tl_enevt_handler")
 }

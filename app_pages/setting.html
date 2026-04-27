@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="../mobi-css/mob-setting.css">
 
-    
+
 
 </head>
 
@@ -55,7 +55,7 @@
                         <input type="checkbox" id="dark-mode-toggle">
                     </div>
 
-                    
+
 
                     <!-- <div class="setting-item">
                         <label for="language-select">访问语言</label>
@@ -77,7 +77,8 @@
 
                     <div class="setting-item">
                         <label for="block-how-many-size-cover">Any(px)以下的封面图使用默认图代替</label>
-                        <input type="text" name="block-how-many-size-cover" id="block-how-many-size-cover" placeholder="">
+                        <input type="text" name="block-how-many-size-cover" id="block-how-many-size-cover"
+                            placeholder="">
                     </div>
 
                 </div>
@@ -127,7 +128,8 @@
                     <div class="settings-title">音乐推荐Agent配置</div>
                     <div class="setting-item">
                         <label for="agent-api-base-url">Api基本地址(不包含/v1)</label>
-                        <input type="text" name="agent-api-base-url" id="agent-api-base-url" placeholder="https://api.deepseek.com">
+                        <input type="text" name="agent-api-base-url" id="agent-api-base-url"
+                            placeholder="https://api.deepseek.com">
                     </div>
                     <div class="setting-item">
                         <label for="agent-api-key">ApiKey</label>
@@ -135,8 +137,16 @@
                     </div>
                     <div class="setting-item">
                         <label for="agent-model-name">模型名称</label>
-                        <input type="text" name="agent-model-name" id="agent-model-name" placeholder="deepseek-v4-flash">
+                        <input type="text" name="agent-model-name" id="agent-model-name"
+                            placeholder="deepseek-v4-flash">
                     </div>
+
+                    <div class="setting-item" style="justify-content: right;">
+                        <button class="save-btn" onclick="clear_agent_base_liked()">重置你的问卷偏好数据</button>
+                        <button class="save-btn" onclick="clear_agent_history_action()">清空收集的歌曲行为缓存</button>
+                        
+                    </div>
+
                 </div>
 
                 <!-- Example Setting Group: Notification Settings -->

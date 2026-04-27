@@ -24,8 +24,8 @@ function showMusicPlayer() {
     if (musicPlayer) {
         musicPlayer.classList.add('show');
     }
-    setNegPxToIframe('mainIframe',151);
-    setNegPxToIframe('subIframeApp',70.5);
+    setNegPxToIframe('mainIframe', 151);
+    setNegPxToIframe('subIframeApp', 70.5);
 
 }
 
@@ -34,7 +34,7 @@ function hideMusicPlayer() {
     if (musicPlayer) {
         musicPlayer.classList.remove('show');
     }
-    setNegPxToIframe('mainIframe',81.2);
+    setNegPxToIframe('mainIframe', 81.2);
     // set100vhToIframe('mainIframe');
     // set100vhToIframe("subIframeApp");
 }
@@ -42,24 +42,24 @@ function hideMusicPlayer() {
 // 创建观察器实例
 const resizeObserver = new ResizeObserver(entries => {
     for (let entry of entries) {
-      const height = entry.contentRect.height;
-      console.log('元素高度变化:', height);
-      // 你的响应逻辑
-      const musicPlayer = document.getElementsByClassName('musicPlayer')[0];
-    //   console.log("debug1")
-    //   console.log(height)
-    //   console.log(musicPlayer.classList.contains("show"))
-      if (height < 50 && musicPlayer.classList.contains("show")){
-          setNegPxToIframe('mainIframe',131);
-          return;
-        }
-        else if (musicPlayer.classList.contains("show")){
-            setNegPxToIframe('mainIframe',151);
+        const height = entry.contentRect.height;
+        // console.debug('元素高度变化:', height);
+        // 你的响应逻辑
+        const musicPlayer = document.getElementsByClassName('musicPlayer')[0];
+        //   console.log("debug1")
+        //   console.log(height)
+        //   console.log(musicPlayer.classList.contains("show"))
+        if (height < 50 && musicPlayer.classList.contains("show")) {
+            setNegPxToIframe('mainIframe', 131);
             return;
         }
-        setNegPxToIframe('mainIframe',81.2);
+        else if (musicPlayer.classList.contains("show")) {
+            setNegPxToIframe('mainIframe', 151);
+            return;
+        }
+        setNegPxToIframe('mainIframe', 81.2);
     }
-  });
+});
 
 // 开始观察某个元素
 resizeObserver.observe(document.querySelector('.main-header'));
@@ -71,7 +71,7 @@ function set100vhToIframe(element_name) {
     }
 }
 
-function setNegPxToIframe(element_name,NegNum) {
+function setNegPxToIframe(element_name, NegNum) {
     const iframe = document.getElementById(element_name);
     if (iframe) {
         iframe.style.height = `calc(100vh - ${NegNum}px)`;
@@ -129,10 +129,10 @@ function dbg(s) {
 }
 
 function lauchDemoMode() {
-    setLocalStorageItem("server_url","https://demo.navidrome.org");
-    setLocalStorageItem("username","demo");
-    setLocalStorageItem("password","demo");
-    showNotification("以演示模式启动","info",1500);
+    setLocalStorageItem("server_url", "https://demo.navidrome.org");
+    setLocalStorageItem("username", "demo");
+    setLocalStorageItem("password", "demo");
+    showNotification("以演示模式启动", "info", 1500);
     init();
 }
 
@@ -435,21 +435,21 @@ function blockFlowLoader(musicStreamUrl) {
 function toggle_inf_play_mode() {
     inf_play_mode = !inf_play_mode;
     let v = inf_play_mode == false ? "禁" : "启"
-    showNotification(`无限播放模式已${v}用`,"success",900)
+    showNotification(`无限播放模式已${v}用`, "success", 900)
     init_inf_play_mode();
 }
 
 function init_inf_play_mode() {
     if (inf_play_mode != true) return false;
-    (async () => { 
+    (async () => {
         var nv = await window.parent.api.getSongSortList(1, "DESC", "random", 0);
         nv = nv[0];
         if (playList.length == 0) {
             playMusic_with_musicId(nv.id)
             return;
         }
-        top.playList.splice(parent.currentIndex + 1, 0, { musicId:nv.id,musicTitle:nv.title, musicArtist:nv.artist, CoverUrl: ""});
-        remove_this_song_from_queue(parent.currentIndex); 
+        top.playList.splice(parent.currentIndex + 1, 0, { musicId: nv.id, musicTitle: nv.title, musicArtist: nv.artist, CoverUrl: "" });
+        remove_this_song_from_queue(parent.currentIndex);
     })();
     return true;
 }
@@ -462,9 +462,7 @@ window.parent.musicPlayerAudio = audio;
 audio.addEventListener('ended', () => {
     console.log("结束的判定模式", playMode);
 
-
     if (init_inf_play_mode()) return;
-
 
     if ((playMode == "listLoop" || playMode == "listRandom") && playList.length > 1) {
         nextMusic();
@@ -534,6 +532,9 @@ function prevMusic() {
 
 // 切换到播放列表下一首
 function nextMusic() {
+    
+    window.top.agent.agent_next_music_callback();
+
     if (init_inf_play_mode()) return;
 
     if (playList.length === 0) return;
@@ -613,7 +614,7 @@ var ps_play_emoji = {
     "play": "▶",
 }
 
-function change_pause_or_play_emoji(change_for){
+function change_pause_or_play_emoji(change_for) {
     const el = document.getElementsByClassName("audio_plays_btn")
 
     for (let index = 0; index < el.length; index++) {
@@ -780,7 +781,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const flowLoaderPercent = isNaN((audio.buffered.end(0) / duration) * 100) || music_load_mode == "default" ? 0 : (audio.buffered.end(0) / duration) * 100;
 
-        buffer_bar_fill.style.width =   flowLoaderPercent + '%';
+        buffer_bar_fill.style.width = flowLoaderPercent + '%';
         buffer_bar_fill_2.style.width = flowLoaderPercent + '%';
     }
 
@@ -802,7 +803,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // console.log("dur =", duration);
         // console.log("flowLoaderPercent", flowLoaderPercent);
         // console.log("progressPercent * 100", (progressPercent * 100));
-        
+
 
         if (audio.duration && audio.duration !== Infinity) {
             // 正常跳转
@@ -955,8 +956,8 @@ function update_big_music_ui(musicTitle, musicArtist, CoverUrl) {
     cover_elw.src = CoverUrl;
 
     change_bigPlayer_main_color(CoverUrl)
-    
-    
+
+
 
 }
 
@@ -1089,7 +1090,7 @@ function remove_this_song_from_queue(index) {
     // 获取当前播放的索引
     let old_currentIndex = window.parent.currentIndex;
 
-    
+
     // 处理移除当前播放的歌曲逻辑
     if (index === old_currentIndex) {
         remove_music_src(); // 移除当前播放的歌曲音源
@@ -1117,15 +1118,15 @@ function remove_this_song_from_queue(index) {
     // 通知用户歌曲已移除
     showNotification(`已将 "${musicTitle}" 从播放列表移除`, 'info', 1500);
 
-    
-    
+
+
     // 更新播放列表UI
     init_queue_ui_list();
-    
-    
+
+
     // console.log('playList[old_currentIndex]["musicTitle"]',playList[old_currentIndex]["musicTitle"])
     // console.log('playList_new[index]["musicTitle"]',playList_new[window.parent.currentIndex]["musicTitle"])
-    
+
 
     playList[old_currentIndex]["musicTitle"] === playList_new[window.parent.currentIndex]["musicTitle"] ? null : playMusic_with_musicId(window.parent.playList[window.parent.currentIndex].musicId);
 

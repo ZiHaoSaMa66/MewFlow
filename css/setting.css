@@ -69,7 +69,7 @@ input {
 .setting-item input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: #ff96f5;
+    accent-color: var(--main-theme-col);
 }
 
 .setting-item input[type="range"] {

@@ -156,7 +156,7 @@ class NavidromeAPI {
 
             const data = await response.json();
 
-            console.log("apiRequest > ", endpoint, " > ", data);
+            console.debug("apiRequest > ", endpoint, " > ", data);
 
             return data;
 
@@ -237,7 +237,6 @@ class NavidromeAPI {
      * @returns {Promise<Object>} - 返回该专辑的歌曲列表数据。
      */
     async getAlbum(albumId) {
-        // console.log("真的执行请求了吗?",albumId);
 
         return this.request_rest('getAlbum', { id: albumId });
     }
@@ -357,8 +356,6 @@ class NavidromeAPI {
      */
     async getLyricsHelper(songId) {
         const reqs = await this.request_rest('getLyricsBySongId', { id: songId }, {});
-
-        // console.log(reqs);
 
         if (reqs.lyricsList.structuredLyrics == null) {
             return [];
