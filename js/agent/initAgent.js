@@ -201,13 +201,10 @@ function run_onetime_push_music_workFlow(baseLiked, scene) {
       })
     }
 
-    // 如果当前音乐元素没有src 即处于空闲状态的话
-    if (window.top.audio.currentSrc == '') {
-      // TODO: 就手动触发一下用音乐id播放函数
-      const id = window.top.playList[0].musicId
-      // 取
-      window.top.playMusic_with_musicId(id)
-    }
+    // 2编: 前面清空了播放列表直接调播放 
+    // 不然点击手动清空播放列表再重开推荐模式就只推歌而不自动播放了..
+    const id = window.top.playList[0].musicId
+    window.top.playMusic_with_musicId(id)
 
     // 直接追加的没有封面图 fix一下.
     window.top.fix_queue_ui_list_img_broken();
